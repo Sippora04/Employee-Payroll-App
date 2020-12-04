@@ -1,10 +1,66 @@
-const salary = document.querySelector('#salary');
-const output = document.querySelector('.salary-output');
-output.textContent = salary.value;
-salary.addEventListener('input', function () {
-output.textContent = salary.value;
-<<<<<<< HEAD
+const getInputValueById=(id)=>{
+    let value=document.querySelector(id).value;
+    return value;
+}
+
+const getSelectedValues=(propertyValue)=>{
+    let allItems=document.querySelectorAll(propertyValue);
+    let selItems=[];
+    allItems.forEach(item=>{
+        if(item.checked) 
+        selItems.push(item.value);
+    });
+    return selItems;
+}
+
+window.addEventListener('DOMContentLoaded',(event)=>{
+    const name=document.querySelector('#name');
+    const textError=document.querySelector('.text-error');
+    name.addEventListener('input',function(){
+        if(name.value.length==0){
+            textError.textContent="";
+            return;
+        }
+        try{
+            (new PayrollData()).name=name.value;
+            textError.textContent="";
+        }catch(e){
+            textError.textContent=e;
+        }
+    });
+
+    const salary=document.querySelector('#salary');
+    const output=document.querySelector('.salary-output');
+    output.textContent=salary.value;
+    salary.addEventListener('input', function(){
+        output.textContent=salary.value;
+    });
 });
-=======
-});
->>>>>>> UC8_SetEventListener
+
+save = () => {
+    let payrollData=new PayrollData();
+    try{
+        payrollData.name=getInputValueById('#name');
+    }catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    payrollData.profilePic=getSelectedValues('[name=profile]').pop();
+    payrollData.gender=getSelectedValues('[name=gender]').pop();
+    empDept=document.querySelectorAll('.checkbox:checked');
+    let empDeptValues=[];
+    for(let i=0;i<empDept.length;i++){
+        if(empDept[i].checked){
+            empDeptValues.push(empDept[i].value);
+        }
+    }
+    payrollData.department=empDeptValues;
+    payrollData.salary=getInputValueById('#salary');
+    let day = document.querySelector('#day').value;
+    let month = document.querySelector('#month').value;
+    let year = document.querySelector('#year').value;
+    let startDate = new Date(year, month-1, day);
+    payrollData.startDate=startDate;
+    payrollData.note=getInputValueById('#notes');
+    alert(payrollData.toString());
+}
