@@ -1,5 +1,6 @@
-class EmployeePayrollData{
+class PayrollData{
 
+    //getter and setter
     get id(){return this._id;}
     set id(id){
         this._id=id;
@@ -35,11 +36,12 @@ class EmployeePayrollData{
     
     get startDate(){return this._startDate;}
     set startDate(startDate) {
-        if (startDate.toLocaleDateString <= new Date().toLocaleDateString)
+        if (startDate<= new Date())
             this._startDate = startDate;
         else throw "Start date is incorrect";
     }
     
+    //method
     toString(){
         const options={ year: 'numeric', month: 'long', day: 'numeric'};
         const empDate=(!this.startDate)?"undefined": this.startDate.toLocaleDateString("en-IN",options);
