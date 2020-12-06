@@ -137,7 +137,7 @@ select{
     font-size: 20px;
     font-family: Roboto;
     letter-spacing: 0px;
-    color: #080808;
+    color: #42515f;
     opacity: 1;
     background: transparent;
     border: none;
@@ -149,7 +149,7 @@ select{
 }
 
 .submitButton{
-    background-color: rgb(109, 180, 241);
+    background-color: lightskyblue;
     margin-right: 30px;
     border-radius: 10px;
 }
@@ -165,6 +165,13 @@ select{
     text-align: center;
     background-color: lightgrey;
     border-radius: 10px;
+}
+
+error-output{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
 }
 
 @media only screen and (max-width:960px){
