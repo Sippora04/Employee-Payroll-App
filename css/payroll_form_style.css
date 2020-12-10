@@ -1,14 +1,14 @@
-body{
+body {
     margin: 0;
     height: 100%;
 }
 
-.header{
+.header {
     padding: 15px 0;
-    background-color: white;
+    background-color: #ffffff;
 }
 
-.header-content{
+.headerContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -16,7 +16,7 @@ body{
     border: 0px solid green;
 }
 
-.logo-content{
+.logoContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -24,22 +24,28 @@ body{
     width: 80%;
 }
 
-.logo-content-img{border: solid 0px #42515f;}
+.logoContainer-img {
+    border: solid 0px #42515f;
+}
 
-.emp-text{
+.emp-text {
     font: normal normal bold 20px/25px Montserrat;
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     letter-spacing: 0px;
-    color:#82a70c;
+    color: #82a70c;
     text-transform: capitalize;
 }
 
-.emp-payroll{color: #42515f }
+.emp-payroll {
+    color: #42515f;
+}
 
-*{box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
-.form-content{
-    min-height: calc(100%-80px);
+.form-content {
+    min-height: calc(100% - 80px);
     background-color: #f7f7f7;
     display: flex;
     justify-content: center;
@@ -47,26 +53,26 @@ body{
     border: 0px solid green;
 }
 
-.form{
+.form {
     width: 65%;
     padding: 44px 60px;
-    background: white 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border: 1px solid #f5f5f5;
     border-radius: 8px;
     opacity: 1;
 }
 
-.form-head{
+.form-head {
     font: normal normal bold 24px/37px Roboto;
     letter-spacing: 0px;
     color: #42515f;
     text-transform: capitalize;
     opacity: 1;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
-.row-content{
+.row-content {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
@@ -74,23 +80,24 @@ body{
     border: 0px solid green;
 }
 
-.label{
+.label {
     min-width: 140px;
 }
 
-label{
-    padding: 12px 12px 12px 0px;
+label {
+    padding: 12px 12px 12px 0;
     display: inline-block;
 }
 
-.text{
+.text {
     font-size: 16px;
     color: #42515f;
     opacity: 1;
     font-family: Roboto;
 }
 
-.input{
+.input {
+    font-family: Roboto;
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -98,24 +105,24 @@ label{
     resize: vertical;
 }
 
-.profile-radio-content{
+.profile-radio-content {
     display: flex;
     flex-direction: row;
 }
 
-.profile-radio-content>label{
+.profile-radio-content>label {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.profile{
+.profile {
     width: 40px;
     border-radius: 50%;
     margin-left: 12px;
 }
 
-select{
+select {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -126,84 +133,107 @@ select{
     background-color: transparent;
 }
 
-.button-content{
+.buttonParent {
     display: flex;
-    margin-bottom: 10px;
+    margin-top: 10px;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.button{
+.button {
     font-size: 20px;
     font-family: Roboto;
     letter-spacing: 0px;
     color: #42515f;
     opacity: 1;
-    background: transparent;
-    border: none;
+    background: #f5f5f5;
+    border: 1px solid #707070;
     font-weight: 400;
     min-width: 140px;
     padding: 7px 7px;
-    border: 1px solid #707070;
     cursor: pointer;
+    border-radius: 4px;
 }
 
-.submitButton{
-    background-color: lightskyblue;
+.submitButton {
     margin-right: 30px;
-    border-radius: 10px;
 }
 
-.cancelButton{
+.submitButton:hover {
+    background: #39ac1ad7;
+    color: #faf9f9e3;
+    font-weight: 300;
+    border: 2px solid #2bd625;
+}
+
+.resetButton:hover {
+    background: #0000008e;
+    color: #faf9f9e3;
+    font-weight: 300;
+    border: 2px solid #e4e4e4;
+}
+
+.cancelButton {
     text-decoration: none;
     text-align: center;
-    background-color: lightgrey;
-    border-radius: 10px;
 }
 
-.resetButton{
-    text-align: center;
-    background-color: lightgrey;
-    border-radius: 10px;
+.cancelButton:hover {
+    background: #b62c25;
+    color: #faf9f9e3;
+    font-weight: 300;
+    border: 2px solid #ff3737;
 }
 
-error-output{
-    margin-left: 10px;
-    font-size: 12px;
+error-output {
+    margin-left: 2px;
+    font-size: 14px;
     font-style: italic;
     color: red;
 }
 
-@media only screen and (max-width:960px){
-    .cancelButton{
+valid-message {
+    font-size: 14px;
+    color: green;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 960px) and (min-width: 600px) {
+    .cancelButton {
         margin-left: 0px;
     }
-    .form{
+    .form {
         width: 85%;
         padding: 44px 20px;
     }
 }
 
-@media only screen and (max-width:600px){
-    .form{
+@media only screen and (max-width: 600px) {
+    .form {
         margin-top: 10px;
     }
-    .row{
+    .row-content {
         flex-direction: column;
+        align-items: center;
     }
-    .submit-reset{
+    .profile-radio-content {
+        flex-flow: wrap;
+    }
+    .submit-reset {
         width: 100%;
         display: flex;
         flex-grow: 1;
+        flex-flow: wrap;
         flex-direction: row-reverse;
         justify-content: space-between;
         margin-bottom: 20px;
     }
-    .submitButton{
+    .submitButton {
         margin: 0;
     }
-    .button-content{
+    .buttonParent {
         flex-direction: column-reverse;
-        align-items: flex-start;
+        align-items: flex-end;
     }
 }
