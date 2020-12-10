@@ -11,7 +11,7 @@ class EmployeePayrollData {
         return this._name;
     }
     set name(name) {
-        const NAME_REGEX = RegExp("^[A-Z]{1}[a-z]{2,}([ ][A-Z]{1}[a-z]{2,})?$");
+        const NAME_REGEX = RegExp("^[A-Z]{1}[a-zA-Z\\s]{2,}$");
         if (NAME_REGEX.test(name)) {
             this._name = name;
         } else throw "Name is Incorrect!";
@@ -62,11 +62,11 @@ class EmployeePayrollData {
     set note(note) {
         this._note = note;
     }
-
+    //method
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const employeeDate = !this.startDate ? "undefined" :
-            this.startDate.toLocaleDateString("en-US", options);
+            this.startDate.toLocaleDateString("en-IN",options);
         return "[ id: " + this.id + ", name: " + this.name + ", gender: " + this.gender + ", profilePicture: " + this._profilePicture +
             ", salary: " + this.salary + ", startDate: " + employeeDate + ", departments: " + this.departments + ", note: " + this._note + " ]" + "\n";
     }
