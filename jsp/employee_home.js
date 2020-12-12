@@ -45,12 +45,14 @@ const createInnerHtml = () => {
 
 const getDepartmentHtml = (departmentList) => {
     let departmentHtml = "";
-    for (let department of departmentList) {
-        departmentHtml = `${departmentHtml} <div class="dept-label">${department}</div>`;
+    if (departmentList) {
+        for (let department of departmentList) {
+            departmentHtml = `${departmentHtml} <div class="dept-label">${department}</div>`;
+        }
     }
     return departmentHtml;
 };
-/* DAY40:UC1 */
+
 const remove = (node) => {
     let employeePayrollData = employeePayrollList.find(employeeData => employeeData._id == node.id);
     if (!employeePayrollData) return;
@@ -60,7 +62,7 @@ const remove = (node) => {
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
 };
-/* DAY40:UC2 */
+
 const update = (node) => {
     let employeePayrollData = employeePayrollList.find(employeeData => employeeData._id == node.id);
     if (!employeePayrollData) return;

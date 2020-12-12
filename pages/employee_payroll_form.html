@@ -1,7 +1,5 @@
-<!-- Employee Payroll Practice Problem -->
-<!-- Practice Work -->
-<!-- <html lang="en">  -->
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -30,11 +28,11 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save()" onreset="resetForm()">
+        <form class="form" action="#" onsubmit="save(event)" onreset="resetForm()">
             <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
-                <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+                <input class="input" type="text" id="name" name="name" placeholder="" required>
                 <valid-message class="valid-name" for="name"></valid-message>
                 <error-output class="name-error" for="name"></error-output>
             </div>
@@ -70,11 +68,6 @@
                         <input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse -7.png"
                             required>
                         <img class="profile" id="image4" src="../assets/profile-images/Ellipse -7.png">
-                    </label>
-                    <label>
-                        <input type="radio" id="profile7" name="profile" value="../assets/profile-images/Ellipse -8.png"
-                            required>
-                        <img class="profile" id="image7" src="../assets/profile-images/Ellipse -8.png">
                     </label>
                 </div>
             </div>
@@ -164,7 +157,7 @@
                         <option value="Mar">March</option>
                         <option value="Apr">April</option>
                         <option value="May">May</option>
-                        <option value="June">June</option>
+                        <option value="Jun">June</option>
                         <option value="July">July</option>
                         <option value="Aug">August</option>
                         <option value="Sep">September</option>
@@ -185,7 +178,7 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
-                <textarea class="input" id="notes" name="Notes" placeholder="Write a note..."
+                <textarea class="input" id="notes" name="Notes" placeholder=""
                     style="height:100px"></textarea>
             </div>
             <div class="buttonParent">

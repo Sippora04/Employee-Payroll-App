@@ -21,26 +21,34 @@ class EmployeePayrollData {
     set gender(gender) {
         this._gender = gender;
     }
+
     get profilePicture() {
         return this._profilePicture;
     }
     set profilePicture(profilePicture) {
         this._profilePicture = profilePicture;
     }
+
     get salary() {
         return this._salary;
     }
     set salary(salary) {
         this._salary = salary;
     }
+
     get startDate() {
         return this._startDate;
     }
     set startDate(startDate) {
-        if (startDate <= new Date()) {
-            this._startDate = startDate;
-        } else throw "Start Date is incorrect.";
+        let now = new Date();
+        if (startDate > now) throw "Start Date is a Futute Date!"
+        let difference = Math.abs(now.getTime() - startDate.getTime());
+        if (difference / (1000 * 60 * 60 * 24) > 30) {
+            throw "Start Date is beyond 30 days!"
+        }
+        this._startDate = startDate;
     }
+
     get departments() {
         return this._departments;
     }
@@ -49,6 +57,7 @@ class EmployeePayrollData {
             this._departments = departments;
         } else throw "No Department Entered!";
     }
+
     get note() {
         return this._note;
     }
