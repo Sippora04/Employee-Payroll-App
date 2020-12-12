@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
     employeePayrollList = getEmployeePayrollDataFromStorage();
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
+    localStorage.removeItem("EmployeeToEdit");
 });
 
 const getEmployeePayrollDataFromStorage = () => {
@@ -49,14 +50,20 @@ const getDepartmentHtml = (departmentList) => {
     }
     return departmentHtml;
 };
-/*DAY40: UC1*/
+/* DAY40:UC1 */
 const remove = (node) => {
     let employeePayrollData = employeePayrollList.find(employeeData => employeeData._id == node.id);
-    if (!employeePayrollData)
-        return;
+    if (!employeePayrollData) return;
     const index = employeePayrollList.map(employeeData => employeeData._id).indexOf(employeePayrollData._id);
     employeePayrollList.splice(index, 1);
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
+};
+/* DAY40:UC2 */
+const update = (node) => {
+    let employeePayrollData = employeePayrollList.find(employeeData => employeeData._id == node.id);
+    if (!employeePayrollData) return;
+    localStorage.setItem("EmployeeToEdit", JSON.stringify(employeePayrollData));
+    window.location.replace(site_properties.add_employee_payroll_page);
 };
